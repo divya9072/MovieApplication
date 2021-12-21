@@ -1,17 +1,18 @@
-import React from "react";
+import {React,useState,useEffect} from "react";
 import axios from "axios";
 import Header from "./Header";
 import "./styles.css";
 import { Link, Outlet } from "react-router-dom";
 
+
 const Search_Api = "https://api.themoviedb.org/3/search/movie?&api_key=0294919b7060e3e3a5be90f5a15e9361&query=";
 
 let Movie = () => {
-  const [movies, setMovies] = React.useState([]);
-  const [searchedItem, setsearchedItem] = React.useState("");
+  const [movies, setMovies] = useState([]);
+  const [searchedItem, setsearchedItem] = useState("");
 
 
-  React.useEffect(() => {
+  useEffect(() => {
     handleOnSubmit(searchedItem);
   }, []);
 

@@ -13,8 +13,8 @@ export default function Header() {
             <h2 className="header--title">MovieHub</h2>
             <h4 className="header--project"><ul>
                 <li ><Link style={{ textDecoration: 'none', color:'white' }} to="/">Home</Link></li>
-                <li><Link style={{ textDecoration: 'none', color:'white' }} to="/">Movies</Link></li>
-                <li>TvShows</li>
+                <li><Link style={{ textDecoration: 'none', color:'white' }} to="/Moviekids">Moviekids</Link></li>
+                <li>Dramas</li>
                 <li>Theaters</li>
             </ul></h4>
         </header>
