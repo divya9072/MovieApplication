@@ -170,7 +170,7 @@ margin-right: 2rem;
   background-color: #1A374D;
   color: #c9e3eb;
   font-weight: 800;
-}
+}     
 
 
 /* Moviecard css */
@@ -189,7 +189,7 @@ margin-right: 2rem;
 
 .box1{
   padding-left: 4rem;
-  margin-top: 3rem;
+  /* margin-top: 3rem; */
   margin-right: 6.5rem;
 
 }
@@ -204,3 +204,11 @@ margin-right: 2rem;
   font-weight: 900;
 }
 
+.size{
+  margin-top: 7rem;
+}
+.c{
+  font-size: 1.3rem;
+  font-weight: 700;
+  line-height: 2.5rem;
+}
