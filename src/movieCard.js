@@ -36,7 +36,6 @@ const Moviecard = () => {
                     <p className='content'><strong>Id: </strong>{newMovies.id}</p>
                     <p className='content'><strong>Popularity: </strong>{newMovies.popularity}</p>
                     <p className='content'><strong>Vote-Average: </strong>{newMovies.vote_average}</p>
-                    {/* <p className="content"><Link style={{ textDecoration: 'none'}} to="/Person">person</Link></p> */}
                     <Cast/>
                 </div>
             </div>

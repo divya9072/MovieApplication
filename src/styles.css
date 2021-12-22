@@ -182,7 +182,7 @@ margin-right: 2rem;
 
 .box{
   display: flex;
-  margin: 2rem;
+  margin-top: 2rem;
   padding-left: 5rem;
   padding-top: 5rem;
 }
@@ -195,7 +195,7 @@ margin-right: 2rem;
 }
 
 .content{
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   font-family: Roboto;
   font-weight: 500;
 }
@@ -204,11 +204,13 @@ margin-right: 2rem;
   font-weight: 900;
 }
 
-.size{
-  margin-top: 7rem;
-}
+
 .c{
   font-size: 1.3rem;
   font-weight: 700;
-  line-height: 2.5rem;
+  line-height: 2.7rem;
+}
+
+.castt:hover{
+  color: rgb(172, 0, 0);
 }
