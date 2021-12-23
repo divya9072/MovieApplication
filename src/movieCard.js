@@ -29,13 +29,13 @@ const Moviecard = () => {
             <div className="box">
                 <img src={"https://image.tmdb.org/t/p/w500" + newMovies.poster_path} className="insideimg"></img>
                 <div className="box1">
-                    <p className='content'><strong>Name: </strong>{newMovies.title}</p>
-                    <p className='content'><strong>Release_date: </strong>{newMovies.release_date}</p>
-                    <p className='content'><strong>Overview: </strong>{newMovies.overview}</p>
-                    <p className='content'><strong>Original-Language: </strong>{newMovies.original_language}</p>
-                    <p className='content'><strong>Id: </strong>{newMovies.id}</p>
-                    <p className='content'><strong>Popularity: </strong>{newMovies.popularity}</p>
-                    <p className='content'><strong>Vote-Average: </strong>{newMovies.vote_average}</p>
+                    <p className='content'><strong>Name:  </strong>{newMovies.title}</p>
+                    <p className='content'><strong>Release_date:  </strong>{newMovies.release_date}</p>
+                    <p className='content'><strong>Overview:  </strong>{newMovies.overview}</p>
+                    <p className='content'><strong>Original-Language:  </strong>{newMovies.original_language}</p>
+                    <p className='content'><strong>Id:  </strong>{newMovies.id}</p>
+                    <p className='content'><strong>Popularity:  </strong>{newMovies.popularity}</p>
+                    <p className='content'><strong>Vote-Average:  </strong>{newMovies.vote_average}</p>
                     <Cast/>
                 </div>
             </div>

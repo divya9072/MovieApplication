@@ -23,7 +23,7 @@ const Cast = () => {
 
 
     const castDetails = newCast?.cast?.slice(0, 5).map((el) => (
-        <Link className="c" style={{ textDecoration: '', color: '#000B49' }} to={`/Person/${el.id}`}>
+        <Link className="c" style={{ textDecoration: 'none', color: '#000B49' }} to={`/Person/${el.id}`}>
             <div className="castt" >
                 {el.name}
             </div></Link>

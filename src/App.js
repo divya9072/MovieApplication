@@ -11,6 +11,7 @@ import {
 } from "react-router-dom";
 
 
+
 let App = () => {
   return (
     <div>
@@ -18,13 +19,12 @@ let App = () => {
         <Routes>
           <Route exact path="/" element={<Main />}>
           </Route>
-          <Route path="/Moviecard/:id" element={<Moviecard/>}>
+          <Route path="/Moviecard/:id" element={<Moviecard />}>
           </Route>
-          <Route path="/Person/:id" element={<Person/>}>
+          <Route path="/Person/:id" element={<Person />}>
           </Route>
-          <Route path="/Moviekids" element={    <Moviekids />}>
-          
-            </Route>
+          <Route path="/Moviekids" element={<Moviekids />}>
+          </Route>
         </Routes>
       </BrowserRouter>
     </div>

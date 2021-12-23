@@ -27,10 +27,18 @@ const Person = () => {
             
             <img src={"https://image.tmdb.org/t/p/w500" + newCast.profile_path} className="insideimg" alt='Profile'></img>
                 <div className="box1">
-                    <p className='content'><strong>Name: </strong>{newCast.name}</p> 
-                    <p className='content'><strong>Biography: </strong>{newCast.biography}</p> 
-                    <p className='content'><strong>Birthday: </strong>{newCast.birthday}</p> 
-                    <p className='content'><strong>Department: </strong>{newCast.known_for_department}</p> 
+                    <p className='content'><strong>Name: </strong>
+                    {newCast.name==="" || null ? 'No Data Provided' : newCast.name}</p> 
+
+                    <p className='content' ><strong>Biography: </strong>
+                    {newCast.biography==="" || null ? 'No Data Provided' : newCast.biography} </p>
+
+                    <p className='content'><strong>Birthday: </strong>
+                    {newCast.birthday===null || "" ? 'No Data Provided' : newCast.birthday}</p> 
+
+                    <p className='content'><strong>Department: </strong>
+                    {newCast.known_for_department==="" || null ? 'No Data Provided' : newCast.known_for_department}</p> 
+                    
                     </div>
                 </div>
         </div>
