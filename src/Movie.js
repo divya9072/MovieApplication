@@ -44,16 +44,19 @@ let Movie = () => {
         <div className='movie-wrapper'>
 
           {movies.map((movie) => (
-            <div className="insidewrapper">
+            <div className="inside">
+              <div className="">
               <Link style={{ textDecoration: 'none' }}
 
                 to={`/Moviecard/${movie.id}`}
                 key={movie.id} >
                 <img src={"https://image.tmdb.org/t/p/w500" + movie.poster_path} className="listimg"></img></Link>
+                </div>
+                <div className="insidediv">
               <p className='movie-list'><strong>Name: </strong>{movie.title}</p>
               <p className='movie-list'><strong>Overview: </strong>{movie.overview}</p>
               <p className='movie-list'><strong>Release_date: </strong>{movie.release_date}</p>
-
+              </div>
             </div>
 
           ))}

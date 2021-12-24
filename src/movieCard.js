@@ -1,7 +1,7 @@
 import {React,useState,useEffect} from "react";
 import Header from "./Header";
 import './styles.css';
-import { Link } from "react-router-dom";
+import axios from 'axios';
 import Cast from "./Cast";
 
 import { useParams } from "react-router-dom";
@@ -15,14 +15,12 @@ const Moviecard = () => {
 
 
     useEffect(() => {
-        console.log(movieUrl);
-        fetch(movieUrl).then((res) => res.json())
-            .then((data) => {
+        axios.get(movieUrl).then((res) => {
+          console.log(res.data);
+          setNewMovies(res.data);
+        })
+    },[]);
 
-                setNewMovies(data);
-                console.log(newMovies);
-            });
-    }, []);
     return (
         <div className="">
             <Header />

@@ -3,6 +3,7 @@ import Main from "./Main";
 import Moviecard from "./movieCard";
 import Moviekids from "./Moviekids";
 import Person from "./Person";
+import Theater from "./Theatres"
 
 import {
   BrowserRouter,
@@ -24,6 +25,8 @@ let App = () => {
           <Route path="/Person/:id" element={<Person />}>
           </Route>
           <Route path="/Moviekids" element={<Moviekids />}>
+          </Route>
+          <Route path="/Theatres" element={<Theater />}>
           </Route>
         </Routes>
       </BrowserRouter>
