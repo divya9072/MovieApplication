@@ -2,14 +2,24 @@ import {React,useState,useEffect} from "react";
 import axios from "axios";
 import Header from "./Header";
 import "./styles.css";
-import { Link, Outlet } from "react-router-dom";
-import {Button,Typography} from '@mui/material';
+import { Link } from "react-router-dom";
+import {Button} from '@mui/material';
+import {makeStyles} from '@mui/styles';
 
+const useStyles = makeStyles({
+    btnStyle :{
+          borderRadius: 50,
+          fontSize: 60 ,
+          backgroundColor: 'red'
+      }
+    })
 
 
 const Search_Api = "https://api.themoviedb.org/3/search/movie?&api_key=0294919b7060e3e3a5be90f5a15e9361&query=";
 
 let Movie = () => {
+  const classes = useStyles();
+
   const [movies, setMovies] = useState([]);
   const [searchedItem, setsearchedItem] = useState("");
 
@@ -38,12 +48,10 @@ let Movie = () => {
         placeholder='Search movie here..'
         value={searchedItem}
         onChange={handleOnChange}
-      ></input></div>
-      {/* <button className="search--button" onClick={() => {
-        handleOnSubmit()
-      }}>Search</button> */}
-      <div className="random">
-      <Button variant="contained" buttonStyle={{borderRadius:50}} style={{borderRadius:50}} onClick={() => {
+      ></input>
+      </div>
+      <div className="search--button">
+      <Button className = {classes.btnStyle} variant="contained" onClick={() => {
         handleOnSubmit()}}>Search</Button>
       </div>
       {movies && (
