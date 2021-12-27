@@ -3,6 +3,8 @@ import axios from "axios";
 import Header from "./Header";
 import "./styles.css";
 import { Link, Outlet } from "react-router-dom";
+import {Button,Typography} from '@mui/material';
+
 
 
 const Search_Api = "https://api.themoviedb.org/3/search/movie?&api_key=0294919b7060e3e3a5be90f5a15e9361&query=";
@@ -29,17 +31,21 @@ let Movie = () => {
   return (
     <div>
       <Header />
+      <div>
       <input
         className='search'
         type='search'
         placeholder='Search movie here..'
         value={searchedItem}
         onChange={handleOnChange}
-      ></input>
-      <button className="search--button" onClick={() => {
+      ></input></div>
+      {/* <button className="search--button" onClick={() => {
         handleOnSubmit()
-      }}>Search</button>
-
+      }}>Search</button> */}
+      <div className="random">
+      <Button variant="contained" buttonStyle={{borderRadius:50}} style={{borderRadius:50}} onClick={() => {
+        handleOnSubmit()}}>Search</Button>
+      </div>
       {movies && (
         <div className='movie-wrapper'>
 

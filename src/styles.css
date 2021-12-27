@@ -45,8 +45,8 @@ margin-right: 2rem;
  cursor:pointer;
 }
 .search {
-  padding: 0.5rem 1.5rem;
-  margin-top: -5rem;
+  /* padding: 0.5rem 1.5rem;
+  margin-top: -5rem; */
   text-align: center;
   position: absolute;
   left: 45%;
@@ -230,4 +230,10 @@ margin-right: 2rem;
 
 .castt:hover{
   color: rgb(172, 0, 0);
+}
+
+
+.random{
+  width: 50px;
+
 }
