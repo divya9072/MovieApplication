@@ -10,7 +10,7 @@ import {
   Routes,
   Route
 } from "react-router-dom";
-import Sign from "./sign";
+import Sign from "./signup";
 
 
 

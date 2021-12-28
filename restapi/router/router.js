@@ -9,6 +9,7 @@ router.post('/register',(req,res)=>{
     })
     registerUser.save()
     .then(data=>{
+        console.log('usercreated')
         res.json(data)
     }).catch(error=>{
         res.json(error)

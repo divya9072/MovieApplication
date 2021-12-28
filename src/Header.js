@@ -11,12 +11,15 @@ export default function Header() {
                 className="header--image"
             />
             <h2 className="header--title">MovieHub</h2>
-            <h4 className="header--project"><ul>
-                <li ><Link style={{ textDecoration: 'none', color:'white' }} to="/">Home</Link></li>
+            <h4 className="header--project">
+                <ul>
+                <li><Link style={{ textDecoration: 'none', color:'white' }} to="/">Home</Link></li>
                 <li><Link style={{ textDecoration: 'none', color:'white' }} to="/Moviekids">Moviekids</Link></li>
                 <li><Link style={{ textDecoration: 'none', color:'white' }} to="/Theatres">Theaters</Link></li>
+                <li>Login</li>
                 <li><Link style={{ textDecoration: 'none', color:'white' }} to="/sign">Register</Link></li>
-            </ul></h4>
+            </ul>
+            </h4>
         </header>
     )
 }
