@@ -240,3 +240,11 @@ margin-right: 2rem;
   width: 50px;
 
 }
+
+
+/* sign up  */
+.App{
+  margin-top: 7rem;
+  text-align: center;
+  display: flex;
+}

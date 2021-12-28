@@ -10,6 +10,7 @@ import {
   Routes,
   Route
 } from "react-router-dom";
+import Sign from "./sign";
 
 
 
@@ -27,6 +28,8 @@ let App = () => {
           <Route path="/Moviekids" element={<Moviekids />}>
           </Route>
           <Route path="/Theatres" element={<Theater />}>
+          </Route>
+          <Route path="/sign" element={<Sign />}>
           </Route>
         </Routes>
       </BrowserRouter>
