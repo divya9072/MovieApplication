@@ -15,7 +15,7 @@ let Main = () => {
     })
 },[]);
 
-  return (
+   return (
     <div>
       <Movie />
       <div className="mcontainer">

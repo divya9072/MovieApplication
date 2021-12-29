@@ -11,6 +11,7 @@ import {
   Route
 } from "react-router-dom";
 import Sign from "./signup";
+import Login from "./login";
 
 
 
@@ -30,6 +31,8 @@ let App = () => {
           <Route path="/Theatres" element={<Theater />}>
           </Route>
           <Route path="/sign" element={<Sign />}>
+          </Route>
+          <Route path="/login" element={<Login />}>
           </Route>
         </Routes>
       </BrowserRouter>
