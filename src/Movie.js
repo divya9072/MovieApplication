@@ -72,8 +72,9 @@ let Movie = () => {
                 <p className='movie-list'><strong>Overview: </strong>{movie.overview}</p>
                 <p className='movie-list'><strong>Release_date: </strong>{movie.release_date}</p>
               </div>
+              
             </div>
-
+            
           ))}
 
         </div>
