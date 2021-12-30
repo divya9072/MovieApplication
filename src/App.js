@@ -20,20 +20,20 @@ let App = () => {
     <div>
       <BrowserRouter>
         <Routes>
-          <Route exact path="/" element={<Main />}>
-          </Route>
-          <Route path="/Moviecard/:id" element={<Moviecard />}>
-          </Route>
-          <Route path="/Person/:id" element={<Person />}>
-          </Route>
-          <Route path="/Moviekids" element={<Moviekids />}>
-          </Route>
-          <Route path="/Theatres" element={<Theater />}>
-          </Route>
-          <Route path="/sign" element={<Sign />}>
-          </Route>
-          <Route path="/login" element={<Login />}>
-          </Route>
+          <Route exact path="/" element={<Main />}/>
+
+          <Route path="/Moviecard/:id" element={<Moviecard />}/>
+       
+          <Route path="/Person/:id" element={<Person />}/>
+         
+          <Route path="/Moviekids" element={<Moviekids />}/>
+       
+          <Route path="/Theatres" element={<Theater />}/>
+        
+          <Route path="/sign" element={<Sign />}/>
+        
+          <Route path="/login" element={<Login />}/>
+         
         </Routes>
       </BrowserRouter>
     </div>

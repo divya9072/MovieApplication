@@ -4,12 +4,13 @@ import Featured from "./Featuredmovie";
 import axios from 'axios';
 
 const Featured_Api = "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=0294919b7060e3e3a5be90f5a15e9361&page=1 "
+
 const genre_api = "https://api.themoviedb.org/3/genre/movie/list?api_key=0294919b7060e3e3a5be90f5a15e9361&language=en-US";
+
 let Main = () => {
   const [newMovies, setNewMovies] = useState([]);
   const [genresList, updateGenres] = useState([]);
   const [filteredList, updateFilterList] = useState([]);
-
   useEffect(() => {
     axios.get(Featured_Api).then((res) => {
       console.log(res.data);
@@ -21,31 +22,33 @@ let Main = () => {
   useEffect(() => {
     axios.get(genre_api).then((response) => {
       if (response.status === 200) {
+        console.log(response.data.genres)
         updateGenres(response.data.genres);
       }
     });
   }, []);
 
-
-  function filterMoviesByGenres(event) {
+  function selectedgenre(event) {
+    console.log('myvalue=', typeof event.target.value);
+    // setGenreId(event.target.value)
     let tempFilteredList = [];
-    while (filteredList.length > 0) {
-      filteredList.pop();
-    }
     newMovies.forEach((movie) => {
+
       movie.genre_ids.forEach((genre) => {
         console.log('Movie not founded')
-        if (parseInt(genre) === parseInt(event.target.value)) {
+        if (Number(genre) === Number(event.target.value)) {
           tempFilteredList.push(movie);
         }
       });
-      updateFilterList(tempFilteredList);
+
 
     });
+    updateFilterList(tempFilteredList);
   }
+
   let tempList = []
-  genresList && genresList.map((genre) => {
-    tempList.push(<option value={genre.id}>{genre.name}</option>);
+  genresList && genresList.map((genre, idx) => {
+    tempList.push(<option key={idx} value={genre.id}>{genre.name}</option>);
   })
 
   return (
@@ -54,25 +57,25 @@ let Main = () => {
 
       {/* Filter */}
       <div>
-        <label for="cars">Choose a Filter:</label>
+        <label>Choose a Filter:</label>
 
-        <select id="genres" onChange={filterMoviesByGenres}>
+        <select id="genres" onChange={selectedgenre}>
           {tempList}
         </select>
 
       </div>
 
       <div className="mcontainer">
-        {filteredList && filteredList.map((movie) =>
-          <Featured key={movie.id} {...movie} />
+        {filteredList && filteredList.map((movie, idx) =>
+          <Featured key={idx} {...movie} />
         )}
       </div>
 
       <center><h3>Trending Movies</h3></center>
 
       <div className="mcontainer">
-        {newMovies && newMovies.map((movie) =>
-          <Featured key={newMovies.id} {...movie} />
+        {newMovies && newMovies.map((movie, idx) =>
+          <Featured key={idx} {...movie} />
         )};
       </div>
     </div>
