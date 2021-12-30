@@ -20,7 +20,7 @@ let App = () => {
     <div>
       <BrowserRouter>
         <Routes>
-          <Route exact path="/" element={<Main />}/>
+          <Route exact path="/" element={<Sign />}/>
 
           <Route path="/Moviecard/:id" element={<Moviecard />}/>
        
@@ -33,7 +33,8 @@ let App = () => {
           <Route path="/sign" element={<Sign />}/>
         
           <Route path="/login" element={<Login />}/>
-         
+          
+          <Route path="/Main" element={<Main />}/>
         </Routes>
       </BrowserRouter>
     </div>

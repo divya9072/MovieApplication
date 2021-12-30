@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import './styles.css';
 import Axios from 'axios';
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
     const[username,setUseName]=useState('')
     const[passwordUser,setPasswordUser]=useState('')
     const[message,setMessage]=useState('')
+    const navigate = useNavigate()
 
     
     const loged=()=>{
@@ -19,6 +21,7 @@ const Login = () => {
             {
                 console.log(res)
                 setMessage(res.data.message)
+                navigate('/Main')
             }
         });
     };
