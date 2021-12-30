@@ -3,7 +3,6 @@ import Movie from "./Movie";
 import Featured from "./Featuredmovie";
 import axios from 'axios';
 
-
 const Featured_Api = "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=0294919b7060e3e3a5be90f5a15e9361&page=1 "
 const genre_api = "https://api.themoviedb.org/3/genre/movie/list?api_key=0294919b7060e3e3a5be90f5a15e9361&language=en-US";
 let Main = () => {
@@ -28,17 +27,15 @@ let Main = () => {
   }, []);
 
 
-  function filterMoviesByGenres() {
-    // selectedGenre=
-    // console.log(newMovies)
+  function filterMoviesByGenres(event) {
     let tempFilteredList = [];
     while (filteredList.length > 0) {
       filteredList.pop();
     }
     newMovies.forEach((movie) => {
       movie.genre_ids.forEach((genre) => {
-        console.log('Movie notfounded')
-        if (parseInt(genre) === parseInt(document.getElementById('genres').value)) {
+        console.log('Movie not founded')
+        if (parseInt(genre) === parseInt(event.target.value)) {
           tempFilteredList.push(movie);
         }
       });
@@ -46,7 +43,6 @@ let Main = () => {
 
     });
   }
-
   let tempList = []
   genresList && genresList.map((genre) => {
     tempList.push(<option value={genre.id}>{genre.name}</option>);
@@ -55,14 +51,16 @@ let Main = () => {
   return (
     <div>
       <Movie />
+
+      {/* Filter */}
       <div>
         <label for="cars">Choose a Filter:</label>
+
         <select id="genres" onChange={filterMoviesByGenres}>
           {tempList}
         </select>
 
       </div>
-      {/* View Filtered data */}
 
       <div className="mcontainer">
         {filteredList && filteredList.map((movie) =>
@@ -71,7 +69,7 @@ let Main = () => {
       </div>
 
       <center><h3>Trending Movies</h3></center>
-      {/* New Featured movies */}
+
       <div className="mcontainer">
         {newMovies && newMovies.map((movie) =>
           <Featured key={newMovies.id} {...movie} />
@@ -81,3 +79,5 @@ let Main = () => {
   )
 };
 export default Main;
+
+
