@@ -8,11 +8,13 @@ const Login = () => {
     const[username,setUseName]=useState('')
     const[passwordUser,setPasswordUser]=useState('')
     const[message,setMessage]=useState('')
+    const[emailUser,setEmailUser]=useState('')
     const navigate = useNavigate()
 
     
     const loged=()=>{
         Axios.post('http://localhost:3001/api/login',{
+            Email:emailUser,
             UserName:username,
             Password:passwordUser,
         }).then((res)=>{
@@ -20,15 +22,20 @@ const Login = () => {
             if(res.data.message)
             {
                 console.log(res)
+                localStorage.setItem('Email',emailUser)
                 setMessage(res.data.message)
                 navigate('/Main')
             }
+            else{
+                alert("Please Register ..!")
+               }
         });
     };
     return (
         <>
         <div className= "regdiv">
         <h1>SIGN IN TO YOUR ACCOUNT</h1>
+        <input type="email" name='email' placeholder=" Email@account" onChange={(e)=>{setEmailUser(e.target.value)}} />
         <input type=" text" name='username'placeholder="Username" onChange={(e)=>{setUseName(e.target.value)}} />
         <input type="password" name='password' placeholder=" Password" onChange={(e)=>{setPasswordUser(e.target.value)}} />
         <button onClick={loged}>LOGIN</button><br></br>

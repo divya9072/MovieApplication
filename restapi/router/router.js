@@ -2,8 +2,16 @@ const express=require('express')
 const router=express.Router()
 const rgTemp=require('../model/Registermodel')
 
+
 router.post('/register',(req,res)=>{
-    const registerUser=new rgTemp
+    const {Email}=req.body
+    const alreadyUser=rgTemp.findOne({Email});
+    if(alreadyUser){
+        res.json({
+            message:"You are already registered..!!"
+        })
+    }else{
+        const registerUser=new rgTemp
     ({
         UserName:req.body.UserName,
         Password:req.body.Password,
@@ -16,10 +24,13 @@ router.post('/register',(req,res)=>{
     }).catch(error=>{
         res.json(error)
     })
+    }
 })
+
 router.post('/login',async(req,res)=>{
     const userDetail= await rgTemp.findOne
     ({
+        Email:req.body.Email,
         UserName:req.body.UserName,
         Password:req.body.Password
     })

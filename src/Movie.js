@@ -1,5 +1,5 @@
 import { React, useState, useEffect } from "react";
-import axios from "axios";
+import Axios from "axios";
 import Header from "./Header";
 import "./styles.css";
 import { Link } from "react-router-dom";
@@ -14,7 +14,6 @@ const useStyles = makeStyles({
   }
 })
 
-
 const Search_Api = "https://api.themoviedb.org/3/search/movie?&api_key=0294919b7060e3e3a5be90f5a15e9361&query=";
 
 let Movie = () => {
@@ -23,21 +22,26 @@ let Movie = () => {
   const [movies, setMovies] = useState([]);
   const [searchedItem, setsearchedItem] = useState("");
 
-
   useEffect(() => {
     handleOnSubmit(searchedItem);
   }, []);
 
   const handleOnSubmit = async () => {
-    const res = await axios.get(Search_Api + searchedItem);
+    const res = await Axios.get(Search_Api + searchedItem);
     setMovies(res.data.results);
     console.log(movies);
+    console.log("Movies and Email:", localStorage.getItem("Email"), movies)
+    Axios.post('http://localhost:3001/api/searchedmovie', {
+      Email: localStorage.getItem("Email"),
+      Moviename: searchedItem
+    }).then((res) => {
+      console.log(res)
+    })
   };
 
   const handleOnChange = (event) => {
     setsearchedItem(event.target.value);
   };
-
   return (
     <div>
       <Header />
@@ -72,9 +76,9 @@ let Movie = () => {
                 <p className='movie-list'><strong>Overview: </strong>{movie.overview}</p>
                 <p className='movie-list'><strong>Release_date: </strong>{movie.release_date}</p>
               </div>
-              
+
             </div>
-            
+
           ))}
 
         </div>

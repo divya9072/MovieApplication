@@ -20,7 +20,7 @@ let App = () => {
     <div>
       <BrowserRouter>
         <Routes>
-          <Route exact path="/" element={<Sign />}/>
+          <Route exact path="/" element={<Main />}/>
 
           <Route path="/Moviecard/:id" element={<Moviecard />}/>
        
