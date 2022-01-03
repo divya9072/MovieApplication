@@ -2,23 +2,29 @@ import React, { useState } from 'react';
 import './styles.css';
 import Axios from 'axios';
 import { Link } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
+
 
 const Sign = () => {
     const [usernameUser, setUsenameUser] = useState("")
     const [passwordUser, setPasswordUser] = useState("")
     const [email, setEmail] = useState("")
-    const[message,setMessage]=useState('');
+    const[message,setMessage]=useState('')
+    const navigate = useNavigate()
 
     const handleSubmit = () => {
         Axios.post('http://localhost:3001/api/register', {
+            Email: email,
             UserName: usernameUser,
             Password: passwordUser,
-            Email: email,
+            
         }).then((res) => {
             console.log(res)
             if(res.data.message)
             {
                 setMessage(res.data.message)
+                // console.log(res.data.message)
+                navigate('/Main')
             }
         });
     };

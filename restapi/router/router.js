@@ -9,22 +9,25 @@ router.post('/register',(req,res)=>{
     if(alreadyUser){
         res.json({
             message:"You are already registered..!!"
-        })
-    }else{
-        const registerUser=new rgTemp
+        })  
+    }
+    const registerUser=new rgTemp
     ({
         UserName:req.body.UserName,
         Password:req.body.Password,
         Email:req.body.Email
     })
     registerUser.save()
-    .then(data=>{
-        console.log('usercreated')
-        res.json(data)
-    }).catch(error=>{
+    .then(
+        // console.log('REGISTERED SUCCESSFULLY')
+        res.json({
+            status:'ok' ,
+            message:'REGISTERED SUCCESSFULLY'
+        })
+    ).catch(error=>{
         res.json(error)
     })
-    }
+    // }
 })
 
 router.post('/login',async(req,res)=>{
@@ -46,6 +49,22 @@ router.post('/login',async(req,res)=>{
             message:'Username/Password incorrect'
         })
     }
+})
+
+const mvTemp=require('../model/Moviemodel')
+
+router.post('/searchedmovie',(req,res)=>{
+    const searchmovie=new mvTemp
+    ({
+        Email:req.body.Email,
+        Moviename:req.body.Moviename
+    })
+    searchmovie.save()
+    .then(data=>{
+        res.json(data)
+    }).catch(error=>{
+        res.json(error)
+    })
 })
 
 module.exports=router

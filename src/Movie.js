@@ -14,7 +14,6 @@ const useStyles = makeStyles({
   }
 })
 
-const Search_Api = "https://api.themoviedb.org/3/search/movie?&api_key=0294919b7060e3e3a5be90f5a15e9361&query=";
 
 let Movie = () => {
   const classes = useStyles();
@@ -22,21 +21,31 @@ let Movie = () => {
   const [movies, setMovies] = useState([]);
   const [searchedItem, setsearchedItem] = useState("");
 
+  const Search_Api = `https://api.themoviedb.org/3/search/movie?&api_key=0294919b7060e3e3a5be90f5a15e9361&query=${searchedItem}`
+
   useEffect(() => {
     handleOnSubmit(searchedItem);
   }, []);
 
   const handleOnSubmit = async () => {
-    const res = await Axios.get(Search_Api + searchedItem);
+    console.log('myapi')
+    // const res = await Axios.get(Search_Api + searchedItem);
+    const res = await Axios.get( Search_Api);
+    console.log('myapi'+`${Search_Api+searchedItem}`)
     setMovies(res.data.results);
     console.log(movies);
     console.log("Movies and Email:", localStorage.getItem("Email"), movies)
+    try{
     Axios.post('http://localhost:3001/api/searchedmovie', {
       Email: localStorage.getItem("Email"),
-      Moviename: searchedItem
+      Moviename: `${searchedItem}`
     }).then((res) => {
       console.log(res)
     })
+    }
+   catch(error){
+     console.log(error,'error');
+   }
   };
 
   const handleOnChange = (event) => {
@@ -55,10 +64,9 @@ let Movie = () => {
         ></input>
       </div>
       <div className="search--button">
-        <Button className={classes.btnStyle} variant="contained" onClick={() => {
-          handleOnSubmit()
-        }}>Search</Button>
+        <Button className={classes.btnStyle} variant="contained" onClick={handleOnSubmit}>Search</Button>
       </div>
+      {/* <button onClick={handleOnSubmit}>Search</button> */}
       {movies && (
         <div className='movie-wrapper'>
 

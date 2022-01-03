@@ -12,5 +12,5 @@ const movieTemp=new mongoose.Schema({
 
 })
 
-module.exports=mongoose.model('movie_list', movieTemp)
+module.exports=mongoose.model('movie_lists', movieTemp)
 

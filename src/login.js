@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './styles.css';
 import Axios from 'axios';
-import { Link, Navigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
