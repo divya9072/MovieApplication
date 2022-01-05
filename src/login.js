@@ -24,10 +24,15 @@ const Login = () => {
                 console.log(res)
                 localStorage.setItem('Email',emailUser)
                 setMessage(res.data.message)
-                navigate('/Main')
+                if(res.data.status=='ok')
+            {
+                navigate('/Main');
+            }else{
+                setMessage(res.data.message)   
+            }
             }
             else{
-                alert("Please Register ..!")
+                alert("Please Register Yourself")
                }
         });
     };

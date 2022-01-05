@@ -20,7 +20,7 @@ let Movie = () => {
 
   const [movies, setMovies] = useState([]);
   const [searchedItem, setsearchedItem] = useState("");
-
+  const MovieList=[];
   const Search_Api = `https://api.themoviedb.org/3/search/movie?&api_key=0294919b7060e3e3a5be90f5a15e9361&query=${searchedItem}`
 
   useEffect(() => {
@@ -35,10 +35,11 @@ let Movie = () => {
     setMovies(res.data.results);
     console.log(movies);
     console.log("Movies and Email:", localStorage.getItem("Email"), movies)
+    MovieList.push(`${searchedItem}`)
     try{
     Axios.post('http://localhost:3001/api/searchedmovie', {
       Email: localStorage.getItem("Email"),
-      Moviename: `${searchedItem}`
+      Moviename: MovieList
     }).then((res) => {
       console.log(res)
     })

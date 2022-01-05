@@ -3,14 +3,14 @@ const router=express.Router()
 const rgTemp=require('../model/Registermodel')
 
 
-router.post('/register',(req,res)=>{
+router.post('/register',async(req,res)=>{
     const {Email}=req.body
-    const alreadyUser=rgTemp.findOne({Email});
+    const alreadyUser=await rgTemp.findOne({Email});
     if(alreadyUser){
         res.json({
             message:"You are already registered..!!"
         })  
-    }
+    }else{
     const registerUser=new rgTemp
     ({
         UserName:req.body.UserName,
@@ -19,7 +19,6 @@ router.post('/register',(req,res)=>{
     })
     registerUser.save()
     .then(
-        // console.log('REGISTERED SUCCESSFULLY')
         res.json({
             status:'ok' ,
             message:'REGISTERED SUCCESSFULLY'
@@ -27,8 +26,9 @@ router.post('/register',(req,res)=>{
     ).catch(error=>{
         res.json(error)
     })
-    // }
+     }
 })
+
 
 router.post('/login',async(req,res)=>{
     const userDetail= await rgTemp.findOne
@@ -53,18 +53,18 @@ router.post('/login',async(req,res)=>{
 
 const mvTemp=require('../model/Moviemodel')
 
-router.post('/searchedmovie',(req,res)=>{
-    const searchmovie=new mvTemp
-    ({
-        Email:req.body.Email,
-        Moviename:req.body.Moviename
-    })
-    searchmovie.save()
-    .then(data=>{
-        res.json(data)
-    }).catch(error=>{
-        res.json(error)
-    })
+router.post('/searchedmovie',async(req,res)=>{
+    try{
+        const searchmovie=await mvTemp.findOneAndUpdate({
+            Email:req.body.Email
+        },{
+            $addToSet:{
+                Moviename: req.body.Moviename
+            }
+        },{upsert:true}); 
+    }catch(err){
+        console.log(err);
+    }
 })
 
 module.exports=router

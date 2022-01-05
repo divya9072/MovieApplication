@@ -6,9 +6,10 @@ const movieTemp=new mongoose.Schema({
         required:true
     },
     Moviename:{
-        type:String,
+        type:[String],
         required:true
     },
+ 
 
 })
 
