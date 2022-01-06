@@ -9,8 +9,10 @@ import { makeStyles } from '@mui/styles';
 const useStyles = makeStyles({
   btnStyle: {
     fontSize: '17px !important',
-    backgroundColor: '#1A374D !important',
-    borderRadius: '10px !important'
+    backgroundColor: '#E4E3E3 !important',
+    borderRadius: '10px !important',
+    color:"black !important",
+    border:'1px solid black !important'
   }
 })
 
@@ -35,23 +37,30 @@ let Movie = () => {
     setMovies(res.data.results);
     console.log(movies);
     console.log("Movies and Email:", localStorage.getItem("Email"), movies)
-    MovieList.push(`${searchedItem}`)
-    try{
-    Axios.post('https://movie-backendapp.herokuapp.com/api/searchedmovie', {
-      Email: localStorage.getItem("Email"),
-      Moviename: MovieList
-    }).then((res) => {
-      console.log(res)
-    })
-    }
-   catch(error){
-     console.log(error,'error');
-   }
-  };
+    
+}
 
-  const handleOnChange = (event) => {
-    setsearchedItem(event.target.value);
-  };
+const handleOnChange = (event) => {
+  setsearchedItem(event.target.value);  
+};
+
+const Watchlist=(movi)=>{
+  // console.log('Watchlist section')
+  // console.log(movi.title)
+  try{
+  MovieList.push(movi.title)
+  Axios.post('https://movie-backendapp.herokuapp.com/api/searchedmovie', {
+    Email: localStorage.getItem("Email"),
+    Moviename: MovieList
+  }).then((res) => {
+    console.log(res)
+  })
+  }
+ catch(error){
+   console.log(error,'error');
+ }
+};
+
   return (
     <div>
       <Header />
@@ -67,7 +76,6 @@ let Movie = () => {
       <div className="search--button">
         <Button className={classes.btnStyle} variant="contained" onClick={handleOnSubmit}>Search</Button>
       </div>
-      {/* <button onClick={handleOnSubmit}>Search</button> */}
       {movies && (
         <div className='movie-wrapper'>
 
@@ -84,6 +92,9 @@ let Movie = () => {
                 <p className='movie-list'><strong>Name: </strong>{movie.title}</p>
                 <p className='movie-list'><strong>Overview: </strong>{movie.overview}</p>
                 <p className='movie-list'><strong>Release_date: </strong>{movie.release_date}</p>
+                <button onClick={()=>{
+                  Watchlist(movie)
+                }}>WatchList</button>
               </div>
 
             </div>

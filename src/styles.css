@@ -2,14 +2,14 @@
   box-sizing: border-box;
 }
 body{
-  background-color: #c7d6df;
+  background-color: white;
 }
 
 .header {
   display: flex;
   align-items: center;
   height: 70px;
-  background-color: #1A374D;
+  background-color: #050505;
   color: white;
   padding: 20px;
   position: fixed;
@@ -63,13 +63,13 @@ margin-right: 2rem;
 
 .movie-wrapper {
   margin: 12rem auto;
-  box-shadow: rgba(147, 147, 185, 0.25) 0px 50px 100px -20px,
+  box-shadow: black 0px 50px 100px -20px,
     rgba(139, 124, 124, 0.3) 0px 30px 60px -30px,
     rgba(175, 183, 190, 0.35) 0px -2px 6px 0px inset;
   padding: 0.7rem;
   border-radius: 1rem;
   width: 55vw;
-  background-color: #1A374D;
+  background-color: #E4E3E3;
   /* text-align: center; */
   margin-bottom: 2rem;
 }
@@ -111,7 +111,7 @@ margin-right: 2rem;
   background-color: #c7d6df;
   margin-right: 0.5rem;
   border-radius: 1rem;
-  border:1px solid #1A374D;
+  border:1px solid #050505;
 }
 .insidewrapper{
     background-color: #6998AB;
@@ -146,14 +146,16 @@ margin-right: 2rem;
 /* feature page css     */
 
 .moviepage{
-  background-color: #1A374D;
+  background-color: #DDDDDD;
   width: 250px;
   height: 93%;
   margin: 1rem;
  /* padding-top: 1rem; */
   border-radius: 4px;
   overflow: hidden; 
-  box-shadow: 3px 3px 6px rgba(0,0,0,0.1);
+  box-shadow: 7px 7px 9px rgba(0,0,0,0.1);
+  border: 1px solid black;
+
 }
 
 .moviepage:hover{
@@ -172,7 +174,7 @@ margin-right: 2rem;
 
 .movie-bottom{
   display: flex;
-  background-color: #1A374D;
+  background-color: #DDDDDD;
   padding:1rem;
   align-items: center;
   justify-content: space-between;
@@ -180,15 +182,15 @@ margin-right: 2rem;
 
 
 .movie-bottom h3{
-  background-color: #1A374D;
+  background-color: #DDDDDD;
   margin: 0;
-  color: #d6d8da;
+  color: black;
   padding-right: 1rem
 
 }
 .movie-bottom  span{
-  background-color: #1A374D;
-  color: #c9e3eb;
+  background-color: #DDDDDD;
+  color: black;
   font-weight: 800;
 }     
 
@@ -197,7 +199,7 @@ margin-right: 2rem;
 .insideimg{
   height: 30%;
   width: 28%;
-  border: 1px solid #1A374D;
+  border: 1px solid #050505;
 }
 
 .box{
