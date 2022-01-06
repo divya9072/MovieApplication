@@ -47,7 +47,6 @@ const Sign = () => {
                     onChange={(e) => { setPasswordUser(e.target.value) }} />
                 <button onClick={handleSubmit}>REGISTER</button><br></br>
                 {message}
-                <button><Link  style={{ textDecoration: 'none', color:'white' }} to='/login'>LOGIN</Link></button>
                 <div className='message'>
                     <p>ALREADY HAVE AN ACCOUNT ?&nbsp;&nbsp;<Link style={{ textDecoration: '', color:'blue' }} to="/login">LOGIN</Link></p>
                 </div>
