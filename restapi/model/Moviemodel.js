@@ -1,17 +1,22 @@
 const mongoose=require('mongoose');
-
-const movieTemp=new mongoose.Schema({
-    Email:{
-        type:String,
-        required:true
-    },
-    Moviename:{
-        type:[String],
-        required:true
-    },
  
-
+const movieTemp=new mongoose.Schema({
+   Email:{
+       type:String,
+       required:true
+   },
+   Moviename:{
+       type:[String],
+       required:true
+   },
+   WatchList:{
+       type:[Number],
+       required: true
+   }
+ 
 })
-
+ 
 module.exports=mongoose.model('movie_lists', movieTemp)
+ 
+ 
 

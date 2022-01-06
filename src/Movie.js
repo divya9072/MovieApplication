@@ -46,20 +46,23 @@ const handleOnChange = (event) => {
 
 const Watchlist=(movi)=>{
   // console.log('Watchlist section')
-  // console.log(movi.title)
+  console.log(movi.title)
+ 
   try{
   MovieList.push(movi.title)
-  Axios.post('https://movie-backendapp.herokuapp.com/api/searchedmovie', {
-    Email: localStorage.getItem("Email"),
-    Moviename: MovieList
+  // Axios.post('https://movie-backendapp.herokuapp.com/api/searchedmovie', {
+    Axios.post('https://movie-backendapp.herokuapp.com/api/watchlist', {
+      movieId:movi.id,
   }).then((res) => {
+  
     console.log(res)
   })
   }
  catch(error){
    console.log(error,'error');
  }
-};
+ };
+ 
 
   return (
     <div>
