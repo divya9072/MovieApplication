@@ -70,56 +70,6 @@ router.post('/searchedmovie',async(req,res)=>{
    }
 })
  
- 
-router.post('/watchlist',async(req,res)=>{
- 
-console.log('from watchlist');
- 
-try {
-   const movie =await WatchList.findOne(req.body.movieId);
- 
-if(movie){
-   var tempCount = movie.count+1;
-   WatchList.findOneAndUpdate({
-       _id:movie._id
-   },{
-       count:tempCount
-   });
-   res.json({message:'Wallah!!! Updated'})
-}else{
-   const AddMovieToWatchList =new WatchList({
-       _id:req.body.movieId,
-       count:1
-   });
-   AddMovieToWatchList.save().then(
-       res.json({
-           message:'Movie added'
-       })
-   ).catch(err=>{
-       res.json(err)
-   })
- 
-}
-} catch (error) {
-   res.json(error)
-  
-}
-  
-})
- 
- 
-router.get('/maxWatchList',async(req,res)=>{
- 
-   try {
- const movie=  WatchList.find().sort({age:+1}).limit(5)
- console.log(movie)
- 
-   } catch (error) {
-       res.json(error)
-      
-   }
-  
-})
- 
 module.exports=router
+ 
  
