@@ -4,7 +4,8 @@
   "description": "registration page",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon server.js"
+    "start": "node server.js",
+    "devStart":"nodemon server.js"
   },
   "author": "Divya",
   "license": "ISC",

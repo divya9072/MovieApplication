@@ -20,4 +20,4 @@ app.use(express.json())
 app.use(cors())
 app.use('/api',schemaUrls)
 
-app.listen(3001,()=>console.log("Server Started"))
+app.listen(process.env.PORT,()=>console.log("Server Started"))

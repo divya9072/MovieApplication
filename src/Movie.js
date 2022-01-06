@@ -37,7 +37,7 @@ let Movie = () => {
     console.log("Movies and Email:", localStorage.getItem("Email"), movies)
     MovieList.push(`${searchedItem}`)
     try{
-    Axios.post('http://localhost:3001/api/searchedmovie', {
+    Axios.post('https://movie-backendapp.herokuapp.com/api/searchedmovie', {
       Email: localStorage.getItem("Email"),
       Moviename: MovieList
     }).then((res) => {

@@ -13,7 +13,7 @@ const Sign = () => {
     const navigate = useNavigate()
 
     const handleSubmit = () => {
-        Axios.post('http://localhost:3001/api/register', {
+        Axios.post('https://movie-backendapp.herokuapp.com/api/register', {
             Email: email,
             UserName: usernameUser,
             Password: passwordUser,
