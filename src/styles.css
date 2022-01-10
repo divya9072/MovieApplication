@@ -9,7 +9,7 @@ body{
   display: flex;
   align-items: center;
   height: 70px;
-  background-color: #050505;
+  background-color: #000000;
   color: white;
   padding: 20px;
   position: fixed;
@@ -69,7 +69,7 @@ margin-right: 2rem;
   padding: 0.7rem;
   border-radius: 1rem;
   width: 55vw;
-  background-color: #E4E3E3;
+  background-color: #C8C6C6;
   /* text-align: center; */
   margin-bottom: 2rem;
 }
@@ -78,6 +78,16 @@ margin-right: 2rem;
   display: flex;
 }
 
+.watchbutton{
+  background-color: #9D9D9D;
+  color: #050505;
+  width: auto;
+  height: 2.2rem;
+  border-radius: 7px;
+  margin-left: 2rem;
+  margin-bottom: 1rem;
+  cursor: pointer;
+}
 .movie-list {
     /* padding: 0.5rem; */
     /* border-radius: 1rem; */
@@ -85,16 +95,16 @@ margin-right: 2rem;
     #1A374D 0px 30px 60px -30px,
     #1A374D 0px -2px 6px 0px inset; */
     margin-left: 2rem;
-    background-color: #c7d6df;
+    background-color: #DDDDDD;
    
 }
 .movie-list strong{
-  background-color: #c7d6df;
+  background-color: #DDDDDD;
   font-size: 1.2rem;
 }
 
 .listimg:hover{
-  border: 2px solid white;
+  border: 2px solid black;
   width: auto;
   height: 14.5rem;
 }
@@ -108,13 +118,13 @@ margin-right: 2rem;
 
 .insidediv{
   margin-left: 1rem;
-  background-color: #c7d6df;
+  background-color: #DDDDDD;
   margin-right: 0.5rem;
   border-radius: 1rem;
   border:1px solid #050505;
 }
 .insidewrapper{
-    background-color: #6998AB;
+    background-color: #DDDDDD;
 }
 .search--button{
   padding: 0.5rem 1.5rem;
@@ -222,7 +232,7 @@ margin-right: 2rem;
   font-weight: 500;
 }
 .content strong{
-  color: #041C32;
+  color: #000000;
   font-weight: 900;
 }
 
@@ -234,7 +244,7 @@ margin-right: 2rem;
 }
 
 .castt:hover{
-  color: rgb(172, 0, 0);
+  color: #838383;
 }
 
 
@@ -243,7 +253,11 @@ margin-right: 2rem;
 
 }
 
-
+.backbutton{
+  width: auto;
+  height: 2rem;
+  margin-right: 5rem;
+}
 /* sign up  */
 
 .regdiv{

@@ -5,10 +5,6 @@ const movieTemp=new mongoose.Schema({
        type:String,
        required:true
    },
-   Moviename:{
-       type:[String],
-       required:true
-   },
    WatchList:{
        type:[Number],
        required: true
