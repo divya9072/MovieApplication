@@ -70,7 +70,7 @@ const mvTemp=require('../model/Moviemodel')
 //    }
 // })
  
-module.exports=router
+
  
  
 router.post('/watchlist',async(req,res)=>{
@@ -83,7 +83,8 @@ mvTemp.findOneAndUpdate({
        Email:req.body.Email
    },{
        $addToSet:{
-           WatchList: req.body.movieId
+           WatchList: req.body.movieId,
+           MovieName:req.body.MovieName
        }
    },{upsert:true}).then(
  
@@ -93,6 +94,7 @@ mvTemp.findOneAndUpdate({
    });
  
 const movie = await WatchList.findOne({_id:req.body.movieId});
+
 if(movie){
 //    var tempCount = movie.count+1;
 //    console.log(tempCount)
@@ -101,10 +103,11 @@ var temp =   await WatchList.findOneAndUpdate({
    },{
        count:movie.count+1
    });
-   res.json({movie:temp,message:'Wallah!!! Updated'})
+   res.json({movie:temp,message:'Count Updated !'})
 }else{
    const AddMovieToWatchList =new WatchList({
        _id:req.body.movieId,
+       MovieName:req.body.MovieName,
        count:1
    });
    AddMovieToWatchList.save().then(
@@ -139,3 +142,4 @@ router.get('/maxWatchList',async(req,res)=>{
  
 
 
+module.exports=router

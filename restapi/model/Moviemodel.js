@@ -8,6 +8,10 @@ const movieTemp=new mongoose.Schema({
    WatchList:{
        type:[Number],
        required: true
+   },
+   MovieName:{
+       type:String,
+       required:true
    }
  
 })

@@ -51,6 +51,7 @@ const Watchlist=(movi)=>{
      Axios.post('http://localhost:3001/api/watchlist', {
        Email:localStorage.getItem("Email"),
        movieId:movi.id,
+       MovieName:movi.title,
    }).then((res) => {
       console.log(res)
    })

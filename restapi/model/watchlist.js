@@ -7,6 +7,7 @@ const WatchList = new Mongoose.Schema({
        type:Number,
        required:true
    }
+   
  
 })
  
