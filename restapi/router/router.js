@@ -2,6 +2,7 @@ const express=require('express')
 const router=express.Router()
 const rgTemp=require('../model/Registermodel')
 const WatchList = require('../model/watchlist')
+const mvTemp=require('../model/Moviemodel')
  
  
 router.post('/register',async(req,res)=>{
@@ -54,7 +55,7 @@ router.post('/login',async(req,res)=>{
    }
 })
  
-const mvTemp=require('../model/Moviemodel')
+// const mvTemp=require('../model/Moviemodel')
  
 // router.post('/searchedmovie',async(req,res)=>{
 //    try{

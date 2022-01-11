@@ -3,6 +3,7 @@ import './styles.css';
 import Axios from 'axios';
 import { Link } from "react-router-dom";
 import { useNavigate } from 'react-router-dom';
+import logo from './signup.PNG'
 
 
 const Sign = () => {
@@ -29,7 +30,11 @@ const Sign = () => {
 
     return (
         <>
-            <div className="regdiv">
+            <div className="regdiv1">
+                <div className='regdiv2'>
+                <img src={logo}></img>
+                </div>
+                <div className='regdiv'>
                 <h1>CREATE YOUR ACCOUNT</h1>
                 <input
                     type="email"
@@ -50,6 +55,7 @@ const Sign = () => {
                 <div className='message'>
                     <p>ALREADY HAVE AN ACCOUNT ?&nbsp;&nbsp;<Link style={{ textDecoration: '', color:'blue' }} to="/login">LOGIN</Link></p>
                 </div>
+            </div>
             </div>
         </>
     )

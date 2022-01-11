@@ -4,7 +4,45 @@
 body{
   background-color: white;
 }
+/* main */
+.yolo{
+  margin-top: 4rem;
+}
+.watchlist{
+ background-color: #e9e8e8;
+ 
+}
+.watchlist > h3{
+  font-size: 1.5rem;
+  color: #363636;
+  font-family: 'Roboto';
+  text-align: center;
+  padding-top: 1rem;
+}
+.trend{
+  text-align: center;
+  margin-top: 8rem;
+  margin-bottom: 5rem;
+  font-size: 2rem;
+  color: #363636;
+}
+.trenddiv{
+  margin-bottom: 7rem;
+}
+/* genre section*/
 
+.genre select{
+  font-size: 1.1rem;
+  margin-left: 1rem;
+  margin-bottom: 2rem;
+  color: #363636;
+}
+.genre label{
+  font-size: 1.3rem;
+  margin-left: 5rem;
+  font-weight: 700;
+  color: #363636;
+}
 .header {
   display: flex;
   align-items: center;
@@ -71,7 +109,7 @@ margin-right: 2rem;
   width: 55vw;
   background-color: #C8C6C6;
   /* text-align: center; */
-  margin-bottom: 2rem;
+  margin-bottom: 4rem;
 }
 
 .inside{
@@ -260,20 +298,35 @@ margin-right: 2rem;
 }
 /* sign up  */
 
+.regdiv2{
+  width: 50%;
+  height: 50%;
+  background-color:#C8C6C6;
+  padding: 20px;
+  border-radius: 10px;
+  margin: auto;
+  margin-top: 12rem;
+  width:600px;
+  max-width: 90%;
+  text-align: center; 
+}
+.regdiv1{
+  display: flex;
+}
 .regdiv{
   margin: auto;
   margin-top: 12rem;
   width:600px;
   max-width: 90%;
   text-align: center; 
-  background-color: #6998AB;
+  background-color:#C8C6C6;
   padding: 20px;
   border-radius: 10px;
  }
  
  .regdiv > h1{
    font-size: 28px;
-   color: #041C32;
+   color: #000000;
    margin:0 0 40px 0;
    font-family: Roboto;
  }
@@ -281,7 +334,7 @@ margin-right: 2rem;
  .regdiv > input{
    width: 90%;
    padding: 10px;
-   background-color: #c7d6df;
+   background-color: #DDDDDD;
    color: #041C32;
    border:0;
    margin:10px 5px;
@@ -289,7 +342,7 @@ margin-right: 2rem;
  }
  
  .regdiv > button{
-   background-color: #041C32;
+   background-color: #363636;
    color: #ccc;
    width: 90%;
    border:2px solid #ccc;
@@ -299,10 +352,10 @@ margin-right: 2rem;
    
  }
  .regdiv > button:hover{
-    background-color: #71a1b4;
+    background-color: #838383;
     cursor: pointer;
-    border:2px solid #041C32;
-    color: #041C32;
+    border:2px solid #000000;
+    color: #000000;
    font-weight: 700;
  }
 
@@ -310,7 +363,7 @@ margin-right: 2rem;
  .message{
    margin-top: 2.5rem;
    font-size: 1.2rem;
-   color: #041C32;
+   color: #000000;
    font-weight: 800;
    font-family: Roboto;
  }
