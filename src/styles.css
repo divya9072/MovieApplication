@@ -30,7 +30,17 @@ body{
   margin-bottom: 7rem;
 }
 /* genre section*/
-
+.filteredgenre{
+  display: flex;
+  margin-left: 4rem;
+}
+.genre{
+  margin-top: 5rem;
+}
+.genrelist{
+  background-color: #DDDDDD;
+  margin-bottom: 8rem;
+}
 .genre select{
   font-size: 1.1rem;
   margin-left: 1rem;
